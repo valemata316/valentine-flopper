@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #ffb6d5, #ffd1e8);
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 26px 26px 18px;
+  border-radius: 22px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+  width: min(560px, 92vw);
+}
+
+h1 {
+  margin: 8px 0 10px;
+  font-size: 34px;
+  color: #ff2f86;
+}
+
+p {
+  margin: 0 0 14px;
+  font-size: 18px;
+  color: #6b2143;
+}
+
+.flopper-img {
+  width: min(420px, 85vw);
+  height: auto;
+  margin: 10px 0 6px;
+  border-radius: 18px;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.25));
+}
+
+.heart-ring {
+  margin-top: 6px;
+  font-size: 18px;
+  color: #ff2f86;
+}
+
+.buttons {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  font-size: 20px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.yes-button {
+  background: hotpink;
+  color: white;
+  box-shadow: 0 10px 25px rgba(255, 0, 140, 0.25);
+}
+
+.no-button {
+  background: white;
+  color: #ff3e8a;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.floating-heart {
+  position: fixed;
+  bottom: -30px;
+  font-size: 26px;
+  pointer-events: none;
+  will-change: transform, opacity;
+  opacity: 0.9;
+  animation: floatUp 4s linear forwards;
+}
+
+@keyframes floatUp {
+  from { transform: translate(-50%, 0) rotate(0deg); opacity: 0.95; }
+  to   { transform: translate(calc(-50% + var(--drift)), -110vh) rotate(25deg); opacity: 0; }
+}
+
+/* Overlay (Yes screen) */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 182, 213, 0.88);
+  display: none;
+  place-items: center;
+  text-align: center;
+  padding: 22px;
+}
+
+.overlay .card {
+  background: rgba(255, 255, 255, 0.78);
+  border-radius: 24px;
+  padding: 26px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  width: min(520px, 92vw);
+}
+
+.overlay h2 {
+  margin: 0 0 10px;
+  color: #ff2f86;
+  font-size: 36px;
+}
+
+.overlay p {
+  margin: 0 0 14px;
+  color: #6b2143;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.close-button {
+  background: #ff2f86;
+  color: white;
+}
